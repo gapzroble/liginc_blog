@@ -3,6 +3,6 @@ app.config(['$stateProvider', function($stateProvider) {
         state({
             name: 'detail',
             url: '/detail',
-            templateUrl: '/templates/single.html',
+            templateUrl: 'templates/single.html',
         });
     }]);

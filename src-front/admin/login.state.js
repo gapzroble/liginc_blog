@@ -3,6 +3,6 @@ admin.config(['$stateProvider', function($stateProvider) {
         state({
             name: 'login',
             url: '/login',
-            templateUrl: '/templates/admin-login.html',
+            templateUrl: 'templates/admin-login.html',
         });
     }]);

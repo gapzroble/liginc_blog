@@ -3,11 +3,11 @@ app.config(['$stateProvider', function($stateProvider) {
         state({
             name: 'home',
             url: '/',
-            templateUrl: '/templates/home.html',
+            templateUrl: 'templates/home.html',
         }).
         state({
             name: 'archive',
             url: '/archive',
-            templateUrl: '/templates/archive.html',
+            templateUrl: 'templates/archive.html',
         });
     }]);
