@@ -3,6 +3,6 @@ admin.config(['$stateProvider', function($stateProvider) {
         state({
             name: 'list',
             url: '/list',
-            templateUrl: '/templates/admin-list.html',
+            templateUrl: 'templates/admin-list.html',
         });
     }]);

@@ -3,11 +3,11 @@ admin.config(['$stateProvider', function($stateProvider) {
         state({
             name: 'create',
             url: '/new',
-            templateUrl: '/templates/admin-post.html',
+            templateUrl: 'templates/admin-post.html',
         }).
         state({
             name: 'edit',
             url: '/edit',
-            templateUrl: '/templates/admin-post.html',
+            templateUrl: 'templates/admin-post.html',
         });
     }]);
