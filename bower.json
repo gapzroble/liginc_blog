@@ -1,0 +1,8 @@
+{
+  "name": "liginc_blog",
+  "dependencies": {
+    "angular": "1.7.x",
+    "angular-resource": "1.7.x",
+    "angular-ui-router": "^1.0.20"
+  }
+}
