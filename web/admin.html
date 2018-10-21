@@ -6,7 +6,7 @@
 <html lang="ja" class="no-js lt-ie9" prefix="og: http://ogp.me/ns#">
 <![endif]-->
 <!--[if gt IE 9]><!-->
-<html lang="ja" class="no-js" prefix="og: http://ogp.me/ns#"><!--<![endif]-->
+<html lang="ja" class="no-js" prefix="og: http://ogp.me/ns#" ng-app="adminApp"><!--<![endif]-->
 
 <head>
     <meta charset="UTF-8">
@@ -43,75 +43,40 @@
 
 <div class="l-wrap js-wrap">
     <!--start header-->
-<header class="l-header  js-header">
+<header class="l-header l-header-admin js-header">
     <div class="l-header-top u-clear">
         
             <div class="l-header-logo">
             
-<div class="logo ">
-    <img src="assets/images/logo.png" width="253" height="28" alt="BLOG"/>
-</div>
+<a class="logo " href="./">
+    <img src="assets/images/logo-admin.png" width="138" height="28" alt="BLOG"/>
+</a>
 
             </div>
-            <div class="l-header-hamburger">
-                <a href="#" class="hamburger js-hamburger " >
-    <span class="hamburger-item"></span>
-    <span class="hamburger-item"></span>
-    <span class="hamburger-item"></span>
-</a>
+            <div class="l-header-text">
+                <p>ADMIN PAGE</p>
             </div>
         
     </div>
 </header>
 <!--end header-->
 
-    <nav class="nav js-nav">
-    <ul class="nav-list">
-        <li class="nav-item">
-            <a href="#" class="nav-link">TOP</a>
-        </li>
-        <li class="nav-item">
-            <a href="#" class="nav-link">Facebook</a>
-        </li>
-        <li class="nav-item">
-            <a href="#" class="nav-link">Twitter</a>
-        </li>
-    </ul>
-</nav>
-
+<!--start l-contents-->
+    <div class="l-container u-clear">
         <!--start l-main-->
         <main class="l-main js-main">
             <div class="l-main-block"></div>
-            <div class="single">
-                <img src="./assets/images/sample1.jpg" alt="" class="single-image">
-                <div class="l-container u-clear">
-                    <h1 class="single-title">THE BEST WII U<br> GAMES OF 2016</h1>
-                    <time class="single-date" datetime="2016-9-16">16 SEP, 2016</time>
-                    <p class="single-desc">Nintendo's Wii U has a reputation as a bit of a video game industry punching bag. It's much less powerful than the competition, its tablet-like GamePad controller hasn't been utilized well in many games, and most games don't come out on the console.<br><br>
-    All of those things, as well as the fact that plenty of people don't realize it's a whole new console, have made it Nintendo's least successful console. But the games that are exclusive to Wii U tend to be really, really good. To that end, we put together a list with the best games to play on the Wii U right now:</p>
-                    <div class="single-button">
-                        <div class="button">
-    <p class="button-text">Top</p>
-</div>
-                    </div>
-                </div>
-            </div>
+            <ui-view></ui-view>
         </main>
         <!--end l-main-->
-
     </div>
     <!--end l-contents-->
 
         <!--footer ここから-->
-    <footer class="l-footer ">
+    <footer class="l-footer l-footer-admin">
         
-            <div class="l-footer-button">
-            <a class="page-top js-scroll" href="#js-body">
-                <span class="page-top-arrow"></span>
-            </a>
-            </div>
             <div class="l-footer-copyright">
-                <small class="copyright">&copy;copyright</small>
+             <small class="copyright">&copy;copyright</small>
             </div>
         
     </footer>
@@ -122,6 +87,7 @@
         <script src="./assets/lib/jquery-3.1.1.min.js"></script>
         <script src="./assets/js/vendor.js"></script>
         <script src="./assets/js/app.js"></script>
+        <script src="./assets/js/blog.js"></script>
         <!--javascript ここまで-->
     </body>
 </html>
