@@ -1,14 +1,12 @@
-
-
-
 <!DOCTYPE html>
 <!--[if lt IE 9]>
 <html lang="ja" class="no-js lt-ie9" prefix="og: http://ogp.me/ns#">
 <![endif]-->
 <!--[if gt IE 9]><!-->
-<html lang="ja" class="no-js" prefix="og: http://ogp.me/ns#" ng-app="adminApp"><!--<![endif]-->
+<html lang="ja" class="no-js" prefix="og: http://ogp.me/ns#"><!--<![endif]-->
 
 <head>
+    <base href="{{ app.request.baseUrl }}/">
     <meta charset="UTF-8">
     <title>Title</title>
     <meta name="description" content="sample text,sample tex">
@@ -31,7 +29,6 @@
     <link rel="stylesheet" href="assets/css/style.css">
 
     <script src="assets/lib/modernizr.js"></script>
-
 </head>
 <body id="js-body">
 <div id="fb-root"></div>
@@ -66,7 +63,7 @@
         <!--start l-main-->
         <main class="l-main js-main">
             <div class="l-main-block"></div>
-            <ui-view></ui-view>
+            {% block content %}{% endblock %}
         </main>
         <!--end l-main-->
     </div>

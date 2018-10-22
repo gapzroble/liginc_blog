@@ -1,0 +1,21 @@
+{% extends "admin/base.html.twig" %}
+
+{% block content %}
+<a href="{{ path('admin_post') }}" class="l-main-button">
+    <div class="button">
+        <p class="button-text">New Article</p>
+    </div>
+</a>
+<ul class="archive archive-admin">
+    {% for post in posts %}
+    <li class="archive-item">
+        <a href="{{ path('admin_post', {id: post.id}) }}" class="post-article">
+            <time class="post-article-date" datetime="{{ post.createdAt | date('Y-m-d') }}">{{ post.createdAt | date('d M, Y') }}</time>
+            <h1 class="post-article-title">{{ post.title }}</h1>
+        </a>
+    </li>
+    {% else %}
+        <em>No posts yet.</em>
+    {% endfor %}
+</ul>
+{% endblock %}
