@@ -2,6 +2,8 @@
 
 namespace AppBundle\Repository;
 
+use Doctrine\ORM\Tools\Pagination\Paginator;
+
 /**
  * PostRepository
  *
@@ -10,4 +12,16 @@ namespace AppBundle\Repository;
  */
 class PostRepository extends \Doctrine\ORM\EntityRepository
 {
+
+    const POSTS_PER_PAGE = 2;
+
+    public function getPosts($currentPage = 1)
+    {
+        $qb = $this->createQueryBuilder('p');
+        $qb->select('partial p.{id, title, banner, createdAt}')
+            ->setFirstResult(static::POSTS_PER_PAGE * ($currentPage - 1))
+            ->setMaxResults(static::POSTS_PER_PAGE);
+
+        return new Paginator($qb->getQuery());
+    }
 }

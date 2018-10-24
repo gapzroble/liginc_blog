@@ -1,19 +1,18 @@
-        <!--start l-main-->
-        <main class="l-main js-main">
-            <div class="l-main-block"></div>
-            <div class="single">
-                <img src="./assets/images/sample1.jpg" alt="" class="single-image">
-                <div class="l-container u-clear">
-                    <h1 class="single-title">THE BEST WII U<br> GAMES OF 2016</h1>
-                    <time class="single-date" datetime="2016-9-16">16 SEP, 2016</time>
-                    <p class="single-desc">Nintendo's Wii U has a reputation as a bit of a video game industry punching bag. It's much less powerful than the competition, its tablet-like GamePad controller hasn't been utilized well in many games, and most games don't come out on the console.<br><br>
-    All of those things, as well as the fact that plenty of people don't realize it's a whole new console, have made it Nintendo's least successful console. But the games that are exclusive to Wii U tend to be really, really good. To that end, we put together a list with the best games to play on the Wii U right now:</p>
-                    <div class="single-button">
-                        <div class="button">
-    <p class="button-text">Top</p>
+<!--start l-main-->
+<main class="l-main js-main">
+    <div class="l-main-block"></div>
+    <div class="single" ng-if="post.$resolved">
+        <img ng-src="{{ post.banner }}" alt="" class="single-image">
+        <div class="l-container u-clear">
+            <h1 class="single-title">{{ post.title }}</h1>
+            <time class="single-date" datetime="{{ post.created_at | date: 'yyyy-MM-dd'}}">{{ post.created_at | date: 'd MMM, yyyy' }}</time>
+            <p class="single-desc" ng-bind-html="content()"></p>
+            <div class="single-button">
+                <div class="button">
+<p class="button-text">Top</p>
 </div>
-                    </div>
-                </div>
             </div>
-        </main>
-        <!--end l-main-->
+        </div>
+    </div>
+</main>
+<!--end l-main-->
