@@ -21,6 +21,12 @@ security:
             pattern: ^/(_(profiler|wdt)|css|images|js)/
             security: false
 
+        api:
+            pattern: ^/api
+            fos_oauth: true
+            stateless: true
+            anonymous: false
+
         main:
             pattern: ^/
 
@@ -38,4 +44,4 @@ security:
     access_control:
         - { path: ^/login$, role: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/admin/, role: ROLE_ADMIN }
-          #- { path: ^/api/, role: IS_AUTHENTICATED_FULLY }
+        - { path: ^/api/, role: IS_AUTHENTICATED_FULLY }
