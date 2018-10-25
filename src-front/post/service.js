@@ -3,9 +3,6 @@ app.
         return $resource('api/posts/:id', {id: '@id'}, {
             get: {
                 method: 'GET',
-                headers: {
-                    Authorization: 'Bearer ' + Settings.accessToken
-                }
             },
         });
     }]);
