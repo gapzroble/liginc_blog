@@ -31,7 +31,7 @@
     <script src="assets/lib/modernizr.js"></script>
 
 </head>
-<body id="js-body">
+<body id="js-body" ng-controller="app.controller">
 <div id="fb-root"></div>
 
 <noscript class="for-no-js">Javascriptを有効にしてください。</noscript>
@@ -47,7 +47,9 @@
             <div class="l-header-logo">
             
 <div class="logo ">
+    <a ui-sref="home" ng-click="closeMenu()">
     <img src="assets/images/logo.png" width="253" height="28" alt="BLOG"/>
+    </a>
 </div>
 
             </div>
@@ -66,13 +68,13 @@
     <nav class="nav js-nav">
     <ul class="nav-list">
         <li class="nav-item">
-            <a href="#" class="nav-link">TOP</a>
+            <a ui-sref="home" ng-click="closeMenu()" class="nav-link">TOP</a>
         </li>
         <li class="nav-item">
-            <a href="#" class="nav-link">Facebook</a>
+            <a href="https://www.facebook.com/facebook/" target="_blank" class="nav-link">Facebook</a>
         </li>
         <li class="nav-item">
-            <a href="#" class="nav-link">Twitter</a>
+            <a href="https://twitter.com/twitter" target="_blank" class="nav-link">Twitter</a>
         </li>
     </ul>
 </nav>
