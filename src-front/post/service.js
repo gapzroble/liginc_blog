@@ -3,6 +3,9 @@ app.
         return $resource('api/posts/:id', {id: '@id'}, {
             get: {
                 method: 'GET',
+                params: {
+                    access_token: Settings.accessToken,
+                },
             },
         });
     }]);
