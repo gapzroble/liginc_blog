@@ -21,7 +21,7 @@
                 </li>
             </ul>
         </div>
-        <a ui-sref="archive({page: data.pagination.current + 1})" class="archive-button">
+        <a ui-sref="archive({page: data.pagination.current + (data.pagination.totalPages > 1 ? 1 : 0)})" class="archive-button">
             <div class="button">
                 <p class="button-text">More</p>
             </div>
