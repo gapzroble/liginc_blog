@@ -1,16 +1,19 @@
 {% extends "admin/base.html.twig" %}
 
 {% block content %}
-<form action="{{ path('admin_list') }}" class="form">
+<form action="{{ path('fos_user_security_check') }}" class="form" method="post">
+    {% if csrf_token is defined %}
+        <input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />
+    {% endif %}
     <label for="user-id" class="form-title">USER ID</label>
-    <input type="text" id="user-id" class="input input-text">
+    <input type="text" id="user-id" class="input input-text" name="_username" value="{{ last_username|default(null) }}" required="required" autocomplete="username">
     <label for="password" class="form-title">PASSWORD</label>
-    <input type="text" id="password" class="input input-text">
+    <input type="password" id="password" class="input input-text" name="_password" required="required" autocomplete="current-password">
     <label for="submit" class="form-button">
         <div class="button">
-<p class="button-text">Login</p>
-</div>
+            <p class="button-text">Login</p>
+        </div>
     </label>
-        <input type="submit" id="submit" class="input input-submit">
+    <input type="submit" id="submit" class="input input-submit" name="_submit">
 </form>
 {% endblock %}
