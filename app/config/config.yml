@@ -30,6 +30,8 @@ framework:
     assets: ~
     php_errors:
         log: true
+    templating:
+        engines: ['twig']
 
 # Twig Configuration
 twig:
@@ -86,3 +88,18 @@ fos_rest:
     routing_loader:
         default_format: json
         include_format: false
+
+fos_user:
+    db_driver: orm
+    firewall_name: main
+    user_class: AppBundle\Entity\User
+    from_email:
+        address: "test@example.com"
+        sender_name: "example"
+
+fos_oauth_server:
+    db_driver: orm
+    client_class: AppBundle\Entity\OAuth2\Client
+    access_token_class: AppBundle\Entity\OAuth2\AccessToken
+    refresh_token_class: AppBundle\Entity\OAuth2\RefreshToken
+    auth_code_class: AppBundle\Entity\OAuth2\AuthCode

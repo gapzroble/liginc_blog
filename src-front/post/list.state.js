@@ -6,8 +6,8 @@ app.config(['$stateProvider', function($stateProvider) {
             controller: 'post.list.controller',
             templateUrl: 'templates/home.html',
             resolve: {
-                data: ['Posts', function (Posts) {
-                    return Posts.get();
+                data: ['Posts', 'Settings', function (Posts, Settings) {
+                    return Posts.get({pageSize: Settings.pageSize}).$promise;
                 }],
             },
         }).
@@ -17,8 +17,12 @@ app.config(['$stateProvider', function($stateProvider) {
             controller: 'post.list.controller',
             templateUrl: 'templates/archive.html',
             resolve: {
-                data: ['Posts', '$stateParams', function (Posts, $stateParams) {
-                    return Posts.get({page: $stateParams.page});
+                data: ['Posts', '$stateParams', 'Settings',
+                function (Posts, $stateParams, Settings) {
+                    return Posts.get({
+                        page: $stateParams.page,
+                        pageSize: Settings.pageSize
+                    }).$promise;
                 }],
             },
         });

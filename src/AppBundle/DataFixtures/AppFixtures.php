@@ -84,6 +84,16 @@ EOC
 ,
                 'banner' => 'uploads/sample5.jpg',
             ),
+            array(
+                'title' => 'Wii U',
+                'content' => <<<EOC
+The Wii U (/ˌwiː ˈjuː/ WEE YOO) is a home video game console developed by Nintendo, and the successor to the Wii.[6] The console was released in November 2012[7][8] and was the first eighth-generation video game console,[9][10] as it competed with Sony's PlayStation 4 and Microsoft's Xbox One.
+
+The Wii U is the first Nintendo console to support HD graphics. The system's primary controller is the Wii U GamePad, which features an embedded touchscreen, and combines directional buttons, analog sticks, and action buttons. The screen can be used either as a supplement to the main display (either providing an alternate, asymmetric gameplay experience, or a means of local multiplayer without resorting to a split screen), or in supported games, to play the game directly on the GamePad independently of the television. The Wii U is backward compatible with all Wii software and accessories – games can support any combination of the GamePad, Wii Remote, Nunchuk, Balance Board, or Nintendo's more traditionally designed Classic Controller or Wii U Pro Controller for input. Online functionality centers around the Nintendo Network platform and Miiverse, an integrated social networking service which allows users to share content in game-specific communities.
+EOC
+,
+                'banner' => 'uploads/Wii_U_Console_and_Gamepad.png',
+            ),
         ];
     }
 }

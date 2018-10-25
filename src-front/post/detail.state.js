@@ -6,7 +6,7 @@ app.config(['$stateProvider', function($stateProvider) {
             templateUrl: 'templates/single.html',
             resolve: {
                 post: ['Posts', '$stateParams', function (Posts, $stateParams) {
-                    return Posts.get({id: $stateParams.id});
+                    return Posts.get({id: $stateParams.id}).$promise;
                 }],
             },
             controller: ['$scope', 'post', '$sce', function ($scope, post, $sce) {

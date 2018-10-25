@@ -15,12 +15,12 @@ class PostRepository extends \Doctrine\ORM\EntityRepository
 
     const POSTS_PER_PAGE = 2;
 
-    public function getPosts($currentPage = 1)
+    public function getPosts($currentPage = 1, $pageSize = self::POSTS_PER_PAGE)
     {
         $qb = $this->createQueryBuilder('p');
         $qb->select('partial p.{id, title, banner, createdAt}')
-            ->setFirstResult(static::POSTS_PER_PAGE * ($currentPage - 1))
-            ->setMaxResults(static::POSTS_PER_PAGE);
+            ->setFirstResult($pageSize * ($currentPage - 1))
+            ->setMaxResults($pageSize);
 
         return new Paginator($qb->getQuery());
     }

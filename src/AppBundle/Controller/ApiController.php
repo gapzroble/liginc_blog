@@ -15,8 +15,9 @@ class ApiController extends FOSRestController
         $em = $this->getDoctrine()->getManager();
 
         $page = $request->get('page', 1);
+        $pageSize = $request->get('pageSize', PostRepository::POSTS_PER_PAGE);
 
-        $paginator = $em->getRepository('AppBundle:Post')->getPosts($page);
+        $paginator = $em->getRepository('AppBundle:Post')->getPosts($page, $pageSize);
 
         $posts = array();
         foreach ($paginator as $post) {
@@ -24,7 +25,7 @@ class ApiController extends FOSRestController
         }
 
         $totalPosts = count($paginator);
-        $totalPages = ceil($totalPosts / PostRepository::POSTS_PER_PAGE);
+        $totalPages = ceil($totalPosts / $pageSize);
 
         return array(
             'posts' => $posts,

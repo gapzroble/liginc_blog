@@ -7,3 +7,6 @@ post_api:
     resource: "AppBundle\\Controller\\ApiController"
     type: rest
     prefix: /api
+
+fos_user:
+    resource: "@FOSUserBundle/Resources/config/routing/security.xml"

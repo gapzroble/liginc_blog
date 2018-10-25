@@ -11,26 +11,9 @@ use Symfony\Component\Routing\Annotation\Route;
  */
 class AdminController extends Controller
 {
+
     /**
      * @Route("/", name="admin_home")
-     */
-    public function index(Request $request)
-    {
-        //return $this->redirect($this->generateUrl('admin_login'));
-        //return $this->redirectToRoute('admin_list');
-        return $this->forward('AppBundle:Admin:login');
-    }
-
-    /**
-     * @Route("/login", name="admin_login")
-     */
-    public function loginAction(Request $request)
-    {
-        return $this->render('admin/login.html.twig', [
-        ]);
-    }
-
-    /**
      * @Route("/list", name="admin_list")
      */
     public function listAction(Request $request)
