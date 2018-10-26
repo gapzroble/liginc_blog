@@ -29,6 +29,22 @@ module.exports = function(grunt) {
                 dest: 'web/assets/js/blog.js'
             },
         },
+        replace: {
+            build: {
+                options: {
+                    patterns: [{
+                        match: /\?b=([0-9]+)/g,
+                        replacement: '?b=<%= new Date().getTime() %>',
+                    }],
+                },
+                files: [{
+                    expand: true,
+                    flatten: true,
+                    src: ['app/Resources/views/default/index.html.twig'],
+                    dest: 'app/Resources/views/default/',
+                }],
+            },
+        },
         watch: {
             src: {
                 files: ['src-front/*.js', 'src-front/**/*.js'],
@@ -46,8 +62,10 @@ module.exports = function(grunt) {
     // Load the plugin that provides the "watch" task.
     grunt.loadNpmTasks('grunt-contrib-watch');
 
+    grunt.loadNpmTasks('grunt-replace');
+
     // Default task(s).
     grunt.registerTask('vendor', ['concat:vendor']);
-    grunt.registerTask('default', ['concat:blog', 'uglify:blog']);
+    grunt.registerTask('default', ['concat:blog', 'uglify:blog', 'replace:build']);
 
 };
