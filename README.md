@@ -26,18 +26,16 @@ The application is using sqlite3 database located in `var/data/data.sqlite`. To
 use other database such as mysql, edit file `app/config/config.yml` under doctrine
 dbal (assuming you know how to configure yml files). Then update `app/config/parameters.yml`.
 
-# Manually create database or run `bin/console doctrine:schema:create` (make sure
+1. Manually create database or run `bin/console doctrine:schema:create` (make sure
 the db user has appropriate level of access)
-# Update the schema `bin/console doctrine:schema:update --force`
-# Create default data (users & posts) `bin/console doctrine:fixtures:load -n`
-# To see other useful commands `bin/console`
+2. Update the schema `bin/console doctrine:schema:update --force`
+3. Create default data (users & posts) `bin/console doctrine:fixtures:load -n`
+4. To see other useful commands `bin/console`
 
 Directories
 -----------
-* `src` => Symfony/php sources
-   `app/Resources/views` => admin templates
-* `src-front` => frontend sources (angularjs)
-   `web/templates` => frontend templates
+* `src` => Symfony/php sources, `app/Resources/views` => admin templates
+* `src-front` => frontend sources (angularjs), `web/templates` => frontend templates
 
 Testing
 -------
