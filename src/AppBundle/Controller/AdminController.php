@@ -95,7 +95,7 @@ class AdminController extends Controller
             'pageTitle' => $pageTitle,
             'post' => $post,
             'form' => $form->createView(),
-            'isValid' => $form->isValid(),
+            'isValid' => !$form->isSubmitted() || $form->isValid(),
         ]);
     }
 }
