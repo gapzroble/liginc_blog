@@ -8,7 +8,9 @@ Installation
 ------------
 * Clone this repository
 * Install vendors: `composer install`
-* Run local server: `bin/console server:run`, visit `http://localhost:8000` or `http://localhost:8000/admin`
+* Run local server: `bin/console server:run`, visit `http://localhost:8000` or 
+`http://localhost:8000/admin`
+* Admin user is `admin`, password `admin`
 
 Deploy
 ------
@@ -17,8 +19,18 @@ Deploy
 
 Development
 -----------
-* Download node modules `npm install` and components `bower install`
+* Download node modules `npm install` (assuming npm is installed) and components `bower install`
 * Build `grunt` and watch for changes `grunt watch`
+
+The application is using sqlite3 database located in `var/data/data.sqlite`. To
+use other database such as mysql, edit file `app/config/config.yml` under doctrine
+dbal (assuming you know how to configure yml files). Then update `app/config/parameters.yml`.
+
+# Manually create database or run `bin/console doctrine:schema:create` (make sure
+the db user has appropriate level of access)
+# Update the schema `bin/console doctrine:schema:update --force`
+# Create default data (users & posts) `bin/console doctrine:fixtures:load -n`
+# To see other useful commands `bin/console`
 
 Directories
 -----------
