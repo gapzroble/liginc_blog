@@ -1,35 +1,42 @@
-app.controller('post.list.controller', ['$scope', '$state', 'data', function($scope, $state, data) {
-    $scope.data = data;
+/**
+ * Controller for homepage and archive.
+ */
+app.controller('post.list.controller', ['$rootScope', '$scope', '$state', 'data',
+    function($rootScope, $scope, $state, data) {
+        $rootScope.pageTitle = $state.is('home') ? 'Home' : 'Archive';
 
-    $scope.getPages = function () {
-        var pages = [];
-        for (var i = 1; i <= data.pagination.totalPages; i++) {
-            pages.push(i);
-        }
-        return pages;
-    };
+        $scope.data = data;
 
-    $scope.isFirstPage = function () {
-        return data.pagination.current === 1;
-    };
+        $scope.getPages = function () {
+            var pages = [];
+            for (var i = 1; i <= data.pagination.totalPages; i++) {
+                pages.push(i);
+            }
+            return pages;
+        };
 
-    $scope.isLastPage = function () {
-        return data.pagination.current === data.pagination.totalPages;
-    };
+        $scope.isFirstPage = function () {
+            return data.pagination.current === 1;
+        };
 
-    $scope.previous = function () {
-        if (!$scope.isFirstPage()) {
-            $state.go('archive', {page: data.pagination.current - 1});
-        }
-    };
+        $scope.isLastPage = function () {
+            return data.pagination.current === data.pagination.totalPages;
+        };
 
-    $scope.next = function () {
-        if (!$scope.isLastPage()) {
-            $state.go('archive', {page: data.pagination.current + 1});
-        }
-    };
+        $scope.previous = function () {
+            if (!$scope.isFirstPage()) {
+                $state.go('archive', {page: data.pagination.current - 1});
+            }
+        };
 
-    $scope.isCurrent = function (page) {
-        return data.pagination.current === page;
-    };
-}]);
+        $scope.next = function () {
+            if (!$scope.isLastPage()) {
+                $state.go('archive', {page: data.pagination.current + 1});
+            }
+        };
+
+        $scope.isCurrent = function (page) {
+            return data.pagination.current === page;
+        };
+    }
+]);

@@ -8,7 +8,7 @@
 <head>
     <base href="{{ app.request.baseUrl | replace({'/app.php': '', '/app_dev.php': ''}) }}/">
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>{% verbatim %}{{ pageTitle || 'Title' }}{% endverbatim %}</title>
     <meta name="description" content="sample text,sample tex">
     <meta name="keywords" content="word1,word2,word3">
 
@@ -101,7 +101,7 @@
         <script src="./assets/lib/jquery-3.1.1.min.js"></script>
         <script src="./assets/js/vendor.js"></script>
         <script src="./assets/js/app.js"></script>
-        <script src="./assets/js/blog.js"></script>
+        <script src="./assets/js/blog.js?b=1540610546526"></script>
         <!--javascript ここまで-->
     </body>
 </html>

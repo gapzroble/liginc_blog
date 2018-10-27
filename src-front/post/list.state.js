@@ -1,3 +1,9 @@
+/**
+ * Define state for list and archive.
+ * 
+ * We need to return .$promise to block page transition if not resource is not
+ * yet resolved.
+ */
 app.config(['$stateProvider', function($stateProvider) {
     $stateProvider.
         state({

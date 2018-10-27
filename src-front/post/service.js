@@ -1,3 +1,6 @@
+/**
+ * Define service/resource to access our api.
+ */
 app.
     factory('Posts', ['$resource', 'Settings', function($resource, Settings) {
         return $resource('api/posts/:id', {id: '@id'}, {

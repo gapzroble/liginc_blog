@@ -8,7 +8,7 @@
 <head>
     <base href="{{ app.request.baseUrl | replace({'/app.php': '', '/app_dev.php': ''}) }}/">
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>{{ pageTitle | default('Admin') }}</title>
     <meta name="description" content="sample text,sample tex">
     <meta name="keywords" content="word1,word2,word3">
 
@@ -45,7 +45,7 @@
         
             <div class="l-header-logo">
             
-<a class="logo " href="./">
+<a class="logo " href="{{ path('admin_home') }}">
     <img src="assets/images/logo-admin.png" width="138" height="28" alt="BLOG"/>
 </a>
 
@@ -63,6 +63,9 @@
         <!--start l-main-->
         <main class="l-main js-main">
             <div class="l-main-block"></div>
+            {% if message is defined and message is not null %}
+            <p>{{ message }}</p>
+            {% endif %}
             {% block content %}{% endblock %}
         </main>
         <!--end l-main-->
@@ -83,6 +86,7 @@
         <!--javascript ここから-->
         <script src="./assets/lib/jquery-3.1.1.min.js"></script>
         <script src="./assets/js/app.js"></script>
+        {% block javascripts %}{% endblock %}
         <!--javascript ここまで-->
     </body>
 </html>

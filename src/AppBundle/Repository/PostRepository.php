@@ -19,6 +19,7 @@ class PostRepository extends \Doctrine\ORM\EntityRepository
     {
         $qb = $this->createQueryBuilder('p');
         $qb->select('partial p.{id, title, banner, createdAt}')
+            ->orderBy('p.createdAt', 'DESC') // see newest first
             ->setFirstResult($pageSize * ($currentPage - 1))
             ->setMaxResults($pageSize);
 
