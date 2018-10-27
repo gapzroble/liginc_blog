@@ -34,10 +34,8 @@ the db user has appropriate level of access)
 
 Directories
 -----------
-* `src` => Symfony/php sources
-   `app/Resources/views` => admin templates
-* `src-front` => frontend sources (angularjs)
-   `web/templates` => frontend templates
+* `src` => Symfony/php sources, `app/Resources/views` => admin templates
+* `src-front` => frontend sources (angularjs), `web/templates` => frontend templates
 
 Testing
 -------
