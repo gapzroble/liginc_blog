@@ -1,8 +1,10 @@
 /**
  * Controller for homepage and archive.
  */
-app.controller('post.list.controller', ['$scope', '$state', 'data',
-    function($scope, $state, data) {
+app.controller('post.list.controller', ['$rootScope', '$scope', '$state', 'data',
+    function($rootScope, $scope, $state, data) {
+        $rootScope.pageTitle = $state.is('home') ? 'Home' : 'Archive';
+
         $scope.data = data;
 
         $scope.getPages = function () {

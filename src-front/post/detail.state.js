@@ -11,7 +11,9 @@ app.config(['$stateProvider', function($stateProvider) {
                 return Posts.get({id: $stateParams.id}).$promise;
             }],
         },
-        controller: ['$scope', 'post', '$sce', function ($scope, post, $sce) {
+        controller: ['$rootScope', '$scope', 'post', '$sce', function ($rootScope, $scope, post, $sce) {
+            $rootScope.pageTitle = post.title;
+
             $scope.post = post;
 
             $scope.content = function () {

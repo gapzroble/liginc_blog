@@ -4,6 +4,7 @@ namespace AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use Gedmo\Timestampable\Traits\TimestampableEntity;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * Post
@@ -29,6 +30,7 @@ class Post
      * @var string
      *
      * @ORM\Column(name="title", type="string", length=128)
+     * @Assert\NotBlank()
      */
     private $title;
 
@@ -36,6 +38,7 @@ class Post
      * @var string
      *
      * @ORM\Column(name="content", type="text")
+     * @Assert\NotBlank()
      */
     private $content;
 
@@ -120,12 +123,14 @@ class Post
 
     /**
      * Get banner
+     * 
+     * @param bool $useBasename
      *
      * @return string
      */
-    public function getBanner()
+    public function getBanner($useBasename = false)
     {
-        return $this->banner;
+        return $useBasename ? basename($this->banner) : $this->banner;
     }
 }
 
