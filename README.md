@@ -2,7 +2,7 @@ blog
 ====
 
 A Symfony project created on October 20, 2018, 5:11 pm.
-(http://blog-gapz101.1d35.starter-us-east-1.openshiftapps.com)
+http://blog-gapz101.1d35.starter-us-east-1.openshiftapps.com
 
 Installation
 ------------
@@ -12,7 +12,7 @@ Installation
 
 Deploy
 ------
-* (https://symfony.com/doc/current/deployment.html)
+* https://symfony.com/doc/current/deployment.html
 * Make sure to `web/uploads` directory writable: `blog-root$ chmod 0777 web/uploads`
 
 Development
