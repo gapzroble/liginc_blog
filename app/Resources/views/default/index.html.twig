@@ -8,7 +8,7 @@
 <head>
     <base href="{{ app.request.baseUrl | replace({'/app.php': '', '/app_dev.php': ''}) }}/">
     <meta charset="UTF-8">
-    <title>{% verbatim %}{{ pageTitle || 'Title' }}{% endverbatim %}</title>
+    <title ng-bind="pageTitle">Title</title>
     <meta name="description" content="sample text,sample tex">
     <meta name="keywords" content="word1,word2,word3">
 
