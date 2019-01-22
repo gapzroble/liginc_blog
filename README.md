@@ -2,7 +2,7 @@ blog
 ====
 
 A Symfony project created on October 20, 2018, 5:11 pm.
-http://blog-gapz101.1d35.starter-us-east-1.openshiftapps.com
+http://blog-gapzr.a3c1.starter-us-west-1.openshiftapps.com/
 
 Installation
 ------------
